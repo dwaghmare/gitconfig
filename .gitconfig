@@ -1,0 +1,59 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
+	pager = true
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red
+	new = green
+
+[color "status"]
+	added = green
+	changed = yellow
+	updated = magenta bold
+	untracked = red bold
+	header = cyan bold
+
+[apply]
+	whitespace = nowarn
+
+[alias]
+	st  = status
+	; status of just the current folder (and subfolders)
+	std = status .
+	; show just the current branch
+	b   = rev-parse --abbrev-ref HEAD
+	br  = branch
+	; show all branches, including remote
+	bra = branch --all
+	; list remotes
+	rem = remote -v
+	; diff and patch
+	df  = diff
+	; show the diff of what's staged
+	dfc = diff --cached
+	; show only the list of filenames
+	dfn = diff --name-only
+	; commits
+	co  = checkout
+	ci  = commit
+	cia = commit -a
+	chp = cherry-pick
+	; rebase
+	; interactive rebase: reorder, reword, zap, and combine commits.
+	rebi = rebase -i
+	; coloured, pretty printed log
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	; list aliases
+	aliases = config --get-regexp alias.*
+
